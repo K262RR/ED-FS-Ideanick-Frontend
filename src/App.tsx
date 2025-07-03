@@ -1,16 +1,10 @@
-export const App = () => {
+import { TrpcProvider } from "./lib/trpc";
+import { AllIdeasPage } from "./pages/AllIdeasPage";
 
+export const App = () => {
   return (
-    <div>
-      <h1>IdeaNick</h1>
-      {ideas.map((idea) => {
-        return (
-          <div key={idea.nick}>
-            <h2>{idea.name}</h2>
-            <p>{idea.description}</p>
-          </div>
-        );
-      })}
-    </div>
+    <TrpcProvider>
+      <AllIdeasPage />
+    </TrpcProvider>
   );
 };
